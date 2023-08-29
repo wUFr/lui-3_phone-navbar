@@ -1,5 +1,5 @@
 {
-	"name": "lui-3_phone-navbar",
+	"name": "@wUFr/lui-3_phone-navbar",
 	"version": "3.7.0",
 	"description": "LUI-3 framework - phone-navbar component",
 	"repository": "https://github.com/wUFr/lui-3_phone-navbar",
@@ -7,7 +7,7 @@
 	"license": "MIT",
 	"private": false,
 	"dependencies": {
-		"lui-3_base": "~3.7.0",
-		"lui-3_forms-base": "~3.7.0"
+		"@wUFr/lui-3_base": "~3.7.0",
+		"@wUFr/lui-3_forms-base": "~3.7.0"
 	}
 }
