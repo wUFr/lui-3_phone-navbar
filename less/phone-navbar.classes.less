@@ -1,0 +1,168 @@
+//
+// LUI-3
+// (C) Jiří Bělský (github.com/wUFr)
+// MIT licenced
+//
+
+
+.@{lui_class_prefix}_phone_navbar when (@lui_navbar_class = true){
+	.lui.navbar.this();
+
+	& when (@lui_navbar_hiding = true){
+		@media (min-width:@lui_navbar_hide_at){
+			display: none;
+		}
+	}
+
+	& > a {
+		.lui.navbar.item();
+	}
+}
+
+.lui_phone_navbar_overlay when (@lui_navbar_overlay_class = true){
+	.lui.navbar.overlay.this();
+
+	&.opened {
+		.lui.navbar.overlay.opened();
+	}
+
+	& when (@lui_navbar_hiding = true){
+		@media (min-width:@lui_navbar_hide_at){
+			display: none;
+		}
+	}
+
+	// MENU
+	ul.menu when (@lui_navbar_overlay_menu_class = true){
+		.lui.navbar.overlay.menu.this();
+
+		li when (@lui_navbar_overlay_menu_item_class = true){
+			.lui.navbar.overlay.menu.item();
+
+			&.spacer {
+				.lui.navbar.overlay.menu.spacer();
+			}
+
+			&.head {
+				.lui.navbar.overlay.menu.head();
+			}
+
+			a when (@lui_navbar_overlay_menu_link_class = true){
+				.lui.navbar.overlay.menu.link();
+			}
+		}
+	}
+
+	// EMPTY BASKET
+	.empty_basket when (@lui_navbar_overlay_empty_basket_class = true){
+		.lui.navbar.overlay.empty-basket.this();
+
+		& > .text when (@lui_navbar_overlay_empty_basket_text_class = true){
+			.lui.navbar.overlay.empty-basket.text();
+		}
+		& > .spacer when (@lui_navbar_overlay_empty_basket_spacer_class = true){
+			.lui.navbar.overlay.empty-basket.spacer();
+		}
+	}
+
+	// BASKET (WITH ITEMS)
+	.basket when (@lui_navbar_overlay_basket_class = true){
+		.lui.navbar.overlay.basket.this();
+
+		// HEADER
+		.head when (@lui_navbar_overlay_basket_head_class = true){
+			.lui.navbar.overlay.basket.head();
+		}
+
+		.products when (@lui_navbar_overlay_basket_products_class = true){
+			.lui.navbar.overlay.basket.products.this();
+
+			// PRODUCT ITEM
+			.item when (@lui_navbar_overlay_basket_products_item_class = true){
+				.lui.navbar.overlay.basket.products.item.this();
+
+				// PRODUCT IMAGE
+				.image when (@lui_navbar_overlay_basket_products_item_image_class = true){
+					.lui.navbar.overlay.basket.products.item.image();
+				}
+
+				// NAME AND PRICE
+				.texts when (@lui_navbar_overlay_basket_products_item_texts_class = true){
+					.lui.navbar.overlay.basket.products.item.texts.this();
+
+					.name when (@lui_navbar_overlay_basket_products_item_texts_name_class = true){
+						.lui.navbar.overlay.basket.products.item.texts.name();
+					}
+
+					.pcs when (@lui_navbar_overlay_basket_products_item_texts_pcs_class = true){
+						.lui.navbar.overlay.basket.products.item.texts.pcs();
+					}
+
+					.price when(@lui_navbar_overlay_basket_products_item_texts_price_class = true){
+						.lui.navbar.overlay.basket.products.item.texts.price();
+					}
+				}
+
+				// ACTIONS
+				.remove when (@lui_navbar_overlay_basket_products_item_remove_wrap_class = true){
+					.lui.navbar.overlay.basket.products.item.remove.wrapper();
+
+					a when (@lui_navbar_overlay_basket_products_item_remove_icon_class = true){
+						.lui.navbar.overlay.basket.products.item.remove.icon();
+					}
+				}
+			}
+		}
+
+		.final_price when (@lui_navbar_overlay_basket_price_class = true){
+			.lui.navbar.overlay.basket.final-price();
+		}
+
+		.actions when (@lui_navbar_overlay_basket_actions_class = true){
+			.lui.navbar.overlay.basket.actions.wrapper();
+
+			.lui_button when (@lui_navbar_overlay_basket_actions_button_class = true){
+				.lui.navbar.overlay.basket.actions.button();
+			}
+		}
+	}
+
+	// SEARCH
+	.search when (@lui_navbar_overlay_search_class = true){
+		// INPUT AND SUBMIT
+		form when (@lui_navbar_overlay_search_form_class = true){
+			.lui.navbar.overlay.search.form.this();
+
+			// INPUT TO ENTER SEARCH TERM
+			input when (@lui_navbar_overlay_search_form_input_class = true){
+				.lui.navbar.overlay.search.form.input();
+			}
+
+			button when (@lui_navbar_overlay_search_form_submit_class = true){
+				.lui.navbar.overlay.search.form.submit();
+			}
+		}
+
+		// LOADING
+		.loading when (@lui_navbar_overlay_search_loading_class = true){
+			.lui.navbar.overlay.search.loading();
+		}
+
+		// FOUND RESULTS
+		.results when (@lui_navbar_overlay_search_results_class = true){
+			.lui.navbar.overlay.search.results.wrapper();
+
+			.found when (@lui_navbar_overlay_search_results_found_class = true){
+				.lui.navbar.overlay.search.results.found();
+			}
+		}
+	}
+}
+
+html.overlay_opened when (@lui_navbar_body_scrollstop = true){
+	.lui.navbar.overlay.noscroll();
+
+	body {
+		.lui.navbar.overlay.noscroll();
+	}
+}
